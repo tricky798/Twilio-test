@@ -1,0 +1,40 @@
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <title>IFR Twilio Test</title>
+</head>
+
+<body ontouchstart=""><!-- ontouchstart="" enables low-delay CSS transitions. -->
+
+<div class=''>
+    <div class='' id=content>
+    </div>
+</div>
+
+<script src="assets/js/jquery-3.3.1.min.js"></script>
+
+<script>
+          redpath = "http://www.zzzzzzzzzz/ajax/twilio.php";
+          $.ajax({
+              url: redpath,
+              type: 'get',
+              success: function(data){
+                  //If the success function is execute,
+                  //then the Ajax request was successful.
+                  //Add the data we received in our Ajax
+                  //request to the "content" div.
+                  $('#content').html(data);
+              },
+              error: function (xhr, ajaxOptions, thrownError) {
+                  var errorMsg = 'Ajax request failed: ' + xhr.responseText;
+                  $('#content').html(errorMsg);
+                }
+          });
+
+</script>
+</body>
+</html>
